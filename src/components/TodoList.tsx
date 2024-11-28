@@ -25,9 +25,6 @@ export default function TodoList() {
         <li
           key={todo.id}
           className={"flex justify-between items-center px-8 h-[60px] text-[18px] cursor-pointer border-b border-black/[8%]"}
-           
-        >
-          <span className={`${todo.isCompleted ? "line-through text-[#967259]" : " "} `}
           onClick={() => {
             setTodos(todos.map((t) => {
                 if (t.id === todo.id){
@@ -37,6 +34,8 @@ export default function TodoList() {
               })
             );
           }}
+        >
+          <span className={`${todo.isCompleted ? "line-through text-[#967259]" : " "} `}
           >
             {todo.text}{" "}
           </span>
