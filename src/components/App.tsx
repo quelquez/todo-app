@@ -7,23 +7,7 @@ import TodoList from "./TodoList";
 
 function App() {
 
-  const [todos, setTodos] = useState([
-    {
-      id: 1,
-      text: "Example1",
-      isCompleted: false,
-    },
-    {
-      id: 2,
-      text: "Example2",
-      isCompleted: true,
-    },
-    {
-      id: 3,
-      text: "Example3",
-      isCompleted: false,
-    },
-  ]);
+  const [todos, setTodos] = useState([]);
 
   return (
     <div className="flex justify-center items-center font-sans bg-[#967259] min-h-screen flex-col">
