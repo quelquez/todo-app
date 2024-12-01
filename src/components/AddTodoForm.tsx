@@ -7,14 +7,20 @@ export default function AddTodoForm({ todos, setTodos }) {
     <form onSubmit={
       (event) => {
         event.preventDefault();
-        setTodos( prev => [
-          ...prev,
-          {
-            id: prev.length + 1,
-            text: todoText,
-            isComleted: false,
-          },
-        ]);
+
+        if(todos.length >= 3){
+          alert("Please log in to add more todos")
+          return;
+        } else {
+          setTodos((prev) => [
+            ...prev,
+            {
+              id: prev.length + 1,
+              text: todoText,
+              isComleted: false,
+            },
+          ]);
+        }
         setTodoText(""); 
       }}
     >
