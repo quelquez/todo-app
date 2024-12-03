@@ -1,26 +1,13 @@
 import { useState } from "react";
 import Button from "./Button";
 
-export default function AddTodoForm({ todos, setTodos }) {
+export default function AddTodoForm({ todos, handleAddTodo }) {
   const [todoText, setTodoText] = useState("");
   return (
     <form onSubmit={
       (event) => {
         event.preventDefault();
-
-        if(todos.length >= 3){
-          alert("Please log in to add more todos")
-          return;
-        } else {
-          setTodos((prev) => [
-            ...prev,
-            {
-              id: prev.length + 1,
-              text: todoText,
-              isComleted: false,
-            },
-          ]);
-        }
+        handleAddTodo(todoText);
         setTodoText(""); 
       }}
     >
